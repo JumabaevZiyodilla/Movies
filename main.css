@@ -1,11 +1,8 @@
+*{
+    box-sizing: border-box;
+}
 body{
     background-color: #000;
-}
-.container {
-    width: 100%;
-    max-width: 1260px;
-    margin: 0 auto;
-    padding: 0px 30px;
 }
 .title{
     font-size: 100px;
@@ -21,12 +18,10 @@ body{
     list-style-type: none;
 }
 .movies-items {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 200px;
-    width: 240px;
     margin-bottom: 20px;
+}
+.movies-box{
+    min-height: 400px;
     padding: 20px;
     background-image: linear-gradient(to right top, #171e20, #1a282f, 
     #1f3341, #2a3c52, #3c4463);
@@ -40,23 +35,30 @@ body{
     font-size: 25px;
     color: #fff;
 }
-.movies-year {
-    font-size: 20px;
-    color: #fff;
-}
-.movies-year-span{
-    margin-left: 10px;
-    color: #797D7F ;
-}
-
+.movies-year,
+.movies-rate,
 .movies-time {
-    font-size: 20px;
+    display: flex;
     margin: 0px;
+    font-size: 15px;
     color: #fff;
 }
-.movies-time-span{
-    margin-left: 10px;
-    color: #88dbaa;
+.movies-year::before,
+.movies-rate::before,
+.movies-time::before{
+    /* display: block; */
+    width: 20px;
+    height: 20px;
+    margin-right: 7px;
+    background-image: url("./img/calendar.png");
+    background-size: 20px;
+    content: "";
+}
+.movies-rate::before{
+    background-image: url("./img/star.png");
+}
+.movies-time::before{
+    background-image: url("./img/clock.png");
 }
 .movies-categories{
     font-size: 20px;
@@ -65,4 +67,9 @@ body{
 .movies-categories-span {
     margin-left: 10px;
     color: #717D7E;
+}
+.modal-rating,
+.modal-year,
+.modal-runtime{
+    color: #000 !important;
 }
