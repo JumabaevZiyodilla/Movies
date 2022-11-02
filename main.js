@@ -54,14 +54,18 @@ function renderMovies(kino) {
 const selectArray = [];
 
 function selectValue(array){
-    let selectValue;
+    let selValue;
+    let val;
     array.forEach(select => {
-        selectValue = select.categories;
+        selValue = select.categories;
+        selValue = selValue.split(", ");
+        selValue.forEach(item => {
+            if (!selectArray.includes(item)) {
+                selectArray.push(item)
+            }
+            console.log(selectArray);
+        })
         
-        if (!selectArray.includes(selectValue)) {
-            selectArray.push(selectValue)
-        }
-
     });
 };
 console.log(selectArray);
