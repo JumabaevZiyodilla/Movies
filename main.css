@@ -17,6 +17,7 @@ body{
     padding-left: 0px;
     list-style-type: none;
 }
+
 .movies-items {
     margin-bottom: 20px;
 }
@@ -72,4 +73,9 @@ body{
 .modal-year,
 .modal-runtime{
     color: #000 !important;
+}
+
+/* INPUT STYLE */
+.search-input{
+    width: 200px;
 }
