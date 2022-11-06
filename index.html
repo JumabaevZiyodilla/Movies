@@ -16,15 +16,15 @@
     <main>
         <section>
             <div class="container">
-                <h1 class="title">Movies</h1>
-                <div class="d-flex align-items-center justify-content-around">
-                    <form class="search-form mb-3" method="get">
-                        <input class="search-input p-2" minlength="1" placeholder="Enter your movie" type="text">
+                <h1 class="mb-5 title ">Movies</h1>
+                <div class="">
+                    <form class="d-flex justify-content-between search-form mb-5" method="get">
+                        <input class="search-input p-2" type="search" placeholder="Enter your movie">
                         <select class="mx-2 p-2 select-categories">
                             <option value="All">All</option>
                         </select>
                         <select class="p-2 select-sort">
-                            <option selected disabled>Choose</option>
+                            <option selected disabled>Choose filter</option>
                             <option value="a-z">A-Z</option>
                             <option value="z-a">Z-A</option>
                             <option value="0-1year">Min to Max Year</option>
@@ -32,16 +32,32 @@
                             <option value="0-1rate">Min to max rate</option>
                             <option value="1-0rate">Max to min rate</option>
                         </select>
-                        <input class="min-year-search" type="number">
-                        <input class="max-year-search" type="number">
-                        <button class="search-btn p-2" type="submit">Search</button>
+                        <input class="p-2 min-year-search" type="number" placeholder="from year ...">
+                        <input class="p-2 max-year-search" type="number" placeholder="to year ...">
+                        <button class="search-btn text-bg-secondary p-2" type="submit">Search</button>
                     </form>
                 </div>
-                
-                <ul class="list-unstyled text-white fs-6 row movies-list">
-                    <img src="./img/Spinner-1s-200px.svg"
-                    width="100" height="100" alt="">
+                <div class="mx-auto mb-4 canvas-box">
+                    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Toggle right offcanvas</button>
+
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                        aria-labelledby="offcanvasRightLabel">
+                        <div class="offcanvas-header">
+                            <h5 id="offcanvasRightLabel"></h5>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <ul class="list-unstyled bookmark-list">
+
+                        </ul>
+                    </div>
+                </div>
+                <ul class="list-unstyled pt-5 text-white fs-6 row border-top movies-list">
+                    <img src="./img/Spinner-1s-200px.svg" width="100" height="100" alt="">
                 </ul>
+
+
             </div>
         </section>
 
@@ -59,9 +75,12 @@
                         <div class="col-7 d-flex flex-column justify-content-between">
                             <div>
                                 <div class="d-flex justify-content-between my-2">
-                                    <span class="modal-rating rating-icon text-white d-inline-flex align-items-center movies-rate"></span>
-                                    <span class="modal-year year-icon d-inline-flex align-items-center movies-year"></span>
-                                    <time class="modal-runtime time-icon d-inline-flex align-items-center movies-time"></time>
+                                    <span
+                                        class="modal-rating rating-icon text-white d-inline-flex align-items-center movies-rate"></span>
+                                    <span
+                                        class="modal-year year-icon d-inline-flex align-items-center movies-year"></span>
+                                    <time
+                                        class="modal-runtime time-icon d-inline-flex align-items-center movies-time"></time>
                                 </div>
                                 <div class="modal-categories mb-2">
 
@@ -71,7 +90,6 @@
                             <a class="modal-imdb-link" href="" target="blank">Show on IMDb</a>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -89,8 +107,11 @@
                     <div class="movies-categories-box">
                         <p class="movies-categories">Categories<span class="movies-categories-span"></span></p>
                     </div>
-                    <button class="movie-btn btn btn-success" type="button" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal">More info</button>
+                    <div class="d-flex flex-column">
+                        <button class="movie-btn mb-3 btn btn-success" type="button" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">More info</button>
+                        <button class="bookmark-btn" type="button">Bookmark</button>
+                    </div>
                 </div>
             </li>
         </template>
